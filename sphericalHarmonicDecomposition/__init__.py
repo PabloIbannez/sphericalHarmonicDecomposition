@@ -403,9 +403,10 @@ class SHD:
             self.logger.info("Spectrum fit: a = {}, m = {}".format(a,m))
 
             #a = log(2*R**2/kc)
+            b  = 0.0
             kc = 2.0*R**2/np.exp(a)
 
-            self.logger.info("b  = 0.0 KbT")
+            self.logger.info("b  = {} KbT".format(b))
             self.logger.info("kc = {} KbT (kc --> kc/2, corrected?, kc = {} KbT)".format(kc,kc/2.0))
             plt.plot(invLF,np.exp(a+m*np.log(invLF)),label="fit",marker="",linestyle="--")
             plt.xscale('log')
@@ -437,6 +438,8 @@ class SHD:
         self.logger.info("Spectrum:")
         for l,a2 in zip(L,a2l):
             self.logger.info("{} {}".format(l,a2))
+
+        return b,kc
 
     def test(self,nCopies,icosphereOrder,radius,radialVariationMax,radialVariationVar):
 

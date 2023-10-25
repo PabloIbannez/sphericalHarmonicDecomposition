@@ -11,4 +11,7 @@ sph.generateIcosahedralGrid(2)
 sph.distributeTrajPointsAlongGrid()
 
 sph.sphericalHarmonicExpansion()
-sph.compute()
+b,k = sph.compute()
+
+print("b = ",b)
+print("k = ",k)
