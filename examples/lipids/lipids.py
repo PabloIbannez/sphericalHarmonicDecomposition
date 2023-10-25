@@ -1,7 +1,9 @@
-from ..sphericalHarmonicsDecomposition import SHD
+from sphericalHarmonicDecomposition import SHD
 
 sph = SHD(name="lipids",
-          Lmin=2,Lmax=10,debug=True)
+          Lmin=2,Lmax=10,
+          expansionMode="abs",
+          radiusMode="expansion")
 
 sph.loadSPtraj("lipids.sp")
 
