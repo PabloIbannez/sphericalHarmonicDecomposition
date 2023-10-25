@@ -522,22 +522,3 @@ class SHD:
         plt.ylabel(r"$Var[a_l]$")
 
         plt.show()
-
-if __name__=="__main__":
-
-    sphA = sphAnalysis(name=sys.argv[1],Lmin=4,Lmax=10,debug=True,expansionMode="fluct")
-
-    np.random.seed(1)
-
-    if len(sys.argv)>3:
-        sphA.loadPSF_DCDtraj(sys.argv[2],sys.argv[3])
-    else:
-        sphA.loadSPtraj(sys.argv[2])
-
-    sphA.generateIcosahedralGrid(2)
-    sphA.distributeTrajPointsAlongGrid()
-
-    sphA.sphericalHarmonicExpansion()
-    sphA.compute(Brooks=False)
-
-    #sphA.test(200,40,1000.0,0.005,0.001)
