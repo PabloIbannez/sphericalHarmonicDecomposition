@@ -51,7 +51,7 @@ class SHD:
         l,m = A[0][n],A[1][n]
         return l,m
 
-    def __init__(self,name="sph",Lmin=2,Lmax=10,debug=False,
+    def __init__(self,name="SHD",Lmin=2,Lmax=10,debug=False,
                  radiusMode    = "geometric",
                  expansionMode = "abs"):
 
