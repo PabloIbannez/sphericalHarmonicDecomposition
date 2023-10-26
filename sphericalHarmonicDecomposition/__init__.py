@@ -435,8 +435,8 @@ class SHD:
             plt.ylabel(r"$Var[a_l]$")
 
         plt.title(self.__name)
-
         plt.savefig("spectrum_{}.png".format(self.__name))
+        plt.close()
 
         self.logger.info("Spectrum:")
         for l,a2 in zip(L,a2l):
