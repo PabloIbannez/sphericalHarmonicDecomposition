@@ -65,6 +65,9 @@ class SHD:
         self.__name = name
 
         self.logger = logging.getLogger("sphAnalysis")
+        #Clean up the logger
+        for handler in self.logger.handlers[:]:
+            self.logger.removeHandler(handler)
         self.logger.setLevel(logging.DEBUG)
         #Formatter, ascii time to day, month, year, hour, minute, second
         formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s',"%d-%b-%Y %H:%M:%S")
@@ -439,7 +442,7 @@ class SHD:
         for l,a2 in zip(L,a2l):
             self.logger.info("{} {}".format(l,a2))
 
-        return b,kc
+        return R,b,kc
 
     def test(self,nCopies,icosphereOrder,radius,radialVariationMax,radialVariationVar):
 
